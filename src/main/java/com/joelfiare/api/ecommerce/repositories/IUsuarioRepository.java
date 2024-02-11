@@ -1,6 +1,6 @@
-package com.nocountry.c1647njava.ecommerce.repositories;
+package com.joelfiare.api.ecommerce.repositories;
 
-import com.nocountry.c1647njava.ecommerce.models.UsuarioModel;
+import com.joelfiare.api.ecommerce.models.UsuarioModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.nocountry.c1647njava.ecommerce;
+package com.joelfiare.api.ecommerce;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

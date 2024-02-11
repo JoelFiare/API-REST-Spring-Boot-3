@@ -1,4 +1,4 @@
-package com.nocountry.c1647njava.ecommerce;
+package com.joelfiare.api.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.nocountry.c1647njava.ecommerce.models;
+package com.joelfiare.api.ecommerce.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,19 +8,16 @@ import java.util.Objects;
 
 @Entity
 @Data
-@Table(name = "ordenes", schema = "c16-47-n-java", catalog = "")
+@Table(name = "ordenes", schema = "c16-47-n-java")
 public class OrdenesModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id_orden")
     private int idOrden;
-    @Basic
-    @Column(name = "id_carrito")
-    private Integer idCarrito;
-    @Basic
+    @OneToOne
+    @JoinColumn(name = "id_carrito")
+    private CarritoModel idCarrito;
     @Column(name = "fecha_orden")
     private Date fechaOrden;
-    @Basic
-    @Column(name = "estado")
     private String estado;
 }

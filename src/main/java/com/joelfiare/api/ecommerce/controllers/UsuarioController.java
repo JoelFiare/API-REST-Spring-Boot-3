@@ -1,7 +1,7 @@
-package com.nocountry.c1647njava.ecommerce.controllers;
+package com.joelfiare.api.ecommerce.controllers;
 
-import com.nocountry.c1647njava.ecommerce.models.UsuarioModel;
-import com.nocountry.c1647njava.ecommerce.services.UsuarioService;
+import com.joelfiare.api.ecommerce.services.UsuarioService;
+import com.joelfiare.api.ecommerce.models.UsuarioModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
