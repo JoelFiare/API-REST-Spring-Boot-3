@@ -43,31 +43,13 @@ public class UsuarioService {
             user.setUsername(request.getUsername());
             user.setEmail(request.getEmail());
             user.setPassword(request.getPassword());
-
-            // Obtener la instancia de ImagenModel correspondiente al idImagen del request
-            ImagenModel imagen = request.getIdImagen();
-            if (imagen != null) {
-                ImagenModel imagenPersisted = imagenRepository.findById((long) imagen.getIdImagen()).orElse(null); // Suponiendo que tienes un repositorio para ImagenModel
-                if (imagenPersisted != null) {
-                    user.setIdImagen(imagenPersisted);
-                } else {
-                    // Manejo de error si la imagen no existe
-                }
-            } else {
-                // Manejo si el campo idImagen es nulo en el request
-            }
+            user.setIdImagen(request.getIdImagen());
 
             return usuarioRepository.save(user);
         } else {
             // Manejo de usuario no encontrado
-            return null;
+            throw new RuntimeException("Usuario no encontrado");
         }
-
-        //user.setUsername(request.getUsername());
-        //user.setEmail(request.getEmail());
-        //user.setPassword(request.getPassword());
-        //user.setIdImagen(request.getIdImagen());
-        //return usuarioRepository.save(user);
     }
 
     //Uso el método deleteById para eliminar un usuario por su id
