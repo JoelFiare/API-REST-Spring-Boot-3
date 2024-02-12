@@ -1,6 +1,5 @@
 package com.joelfiare.api.ecommerce.services;
 
-import com.joelfiare.api.ecommerce.models.ImagenModel;
 import com.joelfiare.api.ecommerce.models.UsuarioModel;
 import com.joelfiare.api.ecommerce.repositories.IImagenRepository;
 import com.joelfiare.api.ecommerce.repositories.IUsuarioRepository;
@@ -36,7 +35,6 @@ public class UsuarioService {
 
     //Uso el método save para actualizar un usuario
     public UsuarioModel updateById(UsuarioModel request, Long id) {
-        //UsuarioModel user = usuarioRepository.findById(id).get();
         UsuarioModel user = usuarioRepository.findById(id).orElse(null); // Manejo de posible valor nulo
 
         if (user != null) {

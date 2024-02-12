@@ -17,20 +17,20 @@ public class UsuarioController {
 
     //Uso @GetMapping para que el método responda a una petición GET
     @GetMapping
-    public ArrayList<UsuarioModel> getUsuarios(){
+    public ArrayList<UsuarioModel> getUsuarios() {
         return usuarioService.getUsuarios();
     }
 
     //Uso @RequestBody para que el usuario se envíe en el cuerpo de la petición
     @PostMapping
-    public UsuarioModel saveUsuario(@RequestBody UsuarioModel usuario){
+    public UsuarioModel saveUsuario(@RequestBody UsuarioModel usuario) {
         return this.usuarioService.saveUsuario(usuario);
     }
 
     //Uso @PathVariable para obtener el id que se envía como parámetro
     //Uso Optional para que devuelva un null si no encuentra el usuario
     @GetMapping(path = "/{id}")
-    public Optional<UsuarioModel> getUsuarioById(@PathVariable("id") Long id){
+    public Optional<UsuarioModel> getUsuarioById(@PathVariable("id") Long id) {
         return this.usuarioService.getUsuarioById(id);
     }
 
@@ -38,16 +38,16 @@ public class UsuarioController {
     //Uso @RequestBody para que el usuario se envíe en el cuerpo de la petición
     //Uso @PathVariable para obtener el id que se envía como parámetro
     @PutMapping(path = "/{id}")
-    public UsuarioModel updateUserById(@RequestBody UsuarioModel request,@PathVariable("id") Long id) {
+    public UsuarioModel updateUserById(@RequestBody UsuarioModel request, @PathVariable("id") Long id) {
         return this.usuarioService.updateById(request, id);
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deleteUsuario(@PathVariable("id") Long id){
+    public String deleteUsuario(@PathVariable("id") Long id) {
         boolean ok = this.usuarioService.deleteUsuario(id);
-        if (ok){
+        if (ok) {
             return "Se eliminó el usuario con id " + id;
-        }else{
+        } else {
             return "No se pudo eliminar el usuario con id " + id;
         }
     }
