@@ -43,8 +43,10 @@ public class UsuarioService {
             user.setUsername(request.getUsername());
             user.setEmail(request.getEmail());
             user.setPassword(request.getPassword());
-            user.setIdImagen(request.getIdImagen());
-
+            // Verifica si el idImagen en request no es null antes de asignarlo
+            if (request.getIdImagen() != null) {
+                user.setIdImagen(request.getIdImagen());
+            }
             return usuarioRepository.save(user);
         } else {
             // Manejo de usuario no encontrado

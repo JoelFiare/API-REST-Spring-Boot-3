@@ -14,9 +14,11 @@ public class UsuarioModel {
     private String username;
     private String email;
     private String password;
-    /*@OneToOne
+    @OneToOne
     @JoinColumn(name = "id_imagen", referencedColumnName = "id_imagen")
-    private ImagenModel idImagen;*/
-    @Column(name = "id_imagen")
-    private Integer idImagen;
+    private ImagenModel idImagen;
+
+
+    //@Column(name = "id_imagen")
+    //private Integer idImagen;
 }

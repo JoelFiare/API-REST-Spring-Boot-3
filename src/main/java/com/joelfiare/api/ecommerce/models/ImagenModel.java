@@ -3,9 +3,6 @@ package com.joelfiare.api.ecommerce.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Arrays;
-import java.util.Objects;
-
 @Entity
 @Data
 @Table(name = "imagen", schema = "c16-47-n-java")
